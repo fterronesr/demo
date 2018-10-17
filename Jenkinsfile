@@ -19,7 +19,7 @@ pipeline {
         '''
         bat '''
           cd %workspace%
-          mkdir asas
+          "C:\\Program Files\\WinRAR\\Winrar.exe" a -afzip -ep1 "%BUILD_TAG%.zip" "%workspace%
         '''
         withAWS(credentials:'devops-s3',region:'us-east-1') {
             s3Upload(file:"${env.BUILD_TAG}.zip", bucket:'belcorp-codedeploy', 'path':"Encore/${env.JOB_NAME}/${env.BUILD_TAG}.zip")        
