@@ -18,6 +18,7 @@ pipeline {
           mkdir tuu
         '''
         bat '''
+           aws --version
           cd %workspace%
           "C:\\Program Files\\WinRAR\\Winrar.exe" a -afzip -ep1 "%BUILD_TAG%.zip" "%workspace%
         '''
