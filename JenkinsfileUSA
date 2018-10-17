@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'windows-slave' }
   stages {
-    stage('Build') {
+    stage('BuildUSA') {
       steps {
         notifyBuild('STARTED')
         bat '''
@@ -9,7 +9,7 @@ pipeline {
         '''      
       }
     }
-    stage('Package Artifact') {
+    stage('Package ArtifactUSA') {
       steps {
         bat '''
           mkdir chile
