@@ -9,7 +9,7 @@ pipeline {
         '''      
       }
     }
-    stage('Package Artifact') {
+    stage('Package ArtifactDemo') {
       steps {
         bat '''
           mkdir chile
