@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('BuildUSA') {
       steps {
-        notifyBuild('STARTED')
+        
         bat '''
           mkdir peru          
         '''      
@@ -19,7 +19,7 @@ pipeline {
         '''
         bat '''
            aws s3 ls
-          
+       }   
         
       }
     }
