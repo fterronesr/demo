@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('BuildUSA') {
       steps {        
-        bat '''
+        powershell '''
           mkdir peru          
         '''    
       }
@@ -11,7 +11,7 @@ pipeline {
     stage('Package ArtifactUSA') {
       steps {
         bat '''
-          aws s3 ls
+          dir
         '''  
       }   
         
