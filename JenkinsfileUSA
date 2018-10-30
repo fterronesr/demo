@@ -4,13 +4,26 @@ pipeline {
     stage('Build') {
       steps {        
         powershell '''
-          mkdir peru   
+          mkdir peru          
+          ls
+        '''    
+      }
+      stage('Package EncoreUSA') {
+      steps {        
+        powershell '''            
           mkdir chile
           ls
         '''    
       }
+      stage('Package EncoreBRA') {
+      steps {        
+        powershell '''             
+          mkdir bol
+          ls
+        '''    
+      }
     }
-    stage('Package ArtifactUSA') {
+    stage('Upload Package S3') {
       steps {
         
         withAWS(credentials:'devops-s3',region:'us-east-1') {
@@ -19,15 +32,7 @@ pipeline {
         }        
       }        
     }
-    stage('Deploy') {
-      steps {        
-        powershell '''
-          mkdir peru   
-          mkdir chile
-          ls
-        '''    
-      }
-    }
+    
     
   }
 }
