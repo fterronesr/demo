@@ -20,14 +20,14 @@ pipeline {
     stage('Package ArtifactBRA') {
       steps {        
         powershell '''
-         pwd
+         mkdir brasil
         '''   
       }
     }
     stage('Deploy BRA') {
       steps {
        powershell '''
-         pwd
+        mkdir argentina
         '''   
       }        
     }
