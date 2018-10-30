@@ -22,9 +22,9 @@ pipeline {
     stage('BuildUSA') {
       steps {        
         powershell '''
-          Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath '$ENV:WORKSPACE\\chile' -Force
+          Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath $ENV:WORKSPACE\\chile -Force
           ls
-        '''    
+        '''   
       }
     }
     stage('Package ArtifactBRA') {
