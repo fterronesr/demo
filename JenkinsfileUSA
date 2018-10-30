@@ -5,13 +5,14 @@ pipeline {
       steps {        
         bat '''
           mkdir peru          
-            
+        '''    
       }
     }
     stage('Package ArtifactUSA') {
       steps {
         bat '''
           aws s3 ls
+        '''  
       }   
         
     }
