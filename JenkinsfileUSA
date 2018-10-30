@@ -17,6 +17,14 @@ pipeline {
             s3Download(file:'.', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/jenkins-QA-SSICC-21.zip', force:true)
             s3Download(file:'.', bucket:'belcorp-codedeploy', path:'Encore/PRD-EncoreUSA/jenkins-PRD-EncoreUSA-8.zip', force:true)
         }
+        steps {
+        
+        powershell '''
+          mkdir p  
+          mkdir c
+          ls
+        '''  
+        }
       }        
     }
     
