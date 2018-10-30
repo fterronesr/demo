@@ -17,9 +17,7 @@ pipeline {
     }
     stage('Package ArtifactBRA') {
       steps {
-        bat '''
-          dir
-        '''  
+        build job: 'DemoLinux'
       }        
     }
   }
