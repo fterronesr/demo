@@ -13,8 +13,14 @@ pipeline {
         bat '''
           dir
         '''  
-      }   
-        
+      }        
+    }
+    stage('Package ArtifactBRA') {
+      steps {
+        bat '''
+          dir
+        '''  
+      }        
     }
   }
 }
