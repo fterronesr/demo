@@ -1,7 +1,7 @@
 pipeline {
   agent { label 'windows-slave' }
   stages {
-    stage('BuildUSA') {
+    stage('Build') {
       steps {        
         powershell '''
           mkdir peru   
@@ -22,11 +22,16 @@ pipeline {
     stage('Package ArtifactBRA') {
       steps {        
         bat '''
-         dir %workspace%
+         cd %workspace%
         '''   
       }
     }
-    stage('Deploy ArtifactBRA') {
+    stage('Deploy BRA') {
+      steps {
+        build job: 'DemoLinux'
+      }        
+    }
+    stage('Deploy USA') {
       steps {
         build job: 'DemoLinux'
       }        
