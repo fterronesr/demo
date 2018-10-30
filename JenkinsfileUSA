@@ -14,7 +14,7 @@ pipeline {
           mkdir chile
           ls
         '''    
-      }
+       }
       }
       stage('Package EncoreBRA') {
       steps {        
@@ -22,9 +22,9 @@ pipeline {
           mkdir bol
           ls
         '''    
+       }
       }
-    }
-    stage('Upload Package S3') {
+      stage('Upload Package S3') {
       steps {
         
         withAWS(credentials:'devops-s3',region:'us-east-1') {
@@ -32,8 +32,6 @@ pipeline {
             s3Download(file:'.', bucket:'belcorp-codedeploy', path:'Encore/PRD-EncoreUSA/jenkins-PRD-EncoreUSA-8.zip', force:true)
         }        
       }        
-    }
-    
-    
+    }    
   }
 }
