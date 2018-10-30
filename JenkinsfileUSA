@@ -2,8 +2,7 @@ pipeline {
   agent { label 'windows-slave' }
   stages {
     stage('BuildUSA') {
-      steps {
-        
+      steps {        
         bat '''
           mkdir peru          
             
@@ -12,15 +11,9 @@ pipeline {
     stage('Package ArtifactUSA') {
       steps {
         bat '''
-          mkdir chile
-        '''
-        powershell '''
-          mkdir tuu
-        '''
-        bat '''
-           aws s3 ls
-       }   
+          aws s3 ls
+      }   
         
-      }
     }
   }
+}
