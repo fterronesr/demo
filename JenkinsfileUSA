@@ -21,13 +21,8 @@ pipeline {
     }
     stage('Package ArtifactBRA') {
       steps {        
-        powershell '''
-          #cd $ENV:WORKSPACE\\peru
-          #Copy-Item $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip $ENV:WORKSPACE  -Recurse
-         # ls
-         # pwd
-          #Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath $ENV:WORKSPACE\\chile -Force
-          ls
+        bat '''
+         dir
         '''   
       }
     }
