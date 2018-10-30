@@ -22,6 +22,8 @@ pipeline {
     stage('Package ArtifactBRA') {
       steps {        
         powershell '''
+          cd peru
+          ls
           Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath $ENV:WORKSPACE\\chile -Force
           ls
         '''   
