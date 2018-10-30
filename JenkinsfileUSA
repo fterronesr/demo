@@ -15,7 +15,7 @@ pipeline {
         
         withAWS(credentials:'devops-s3',region:'us-east-1') {
             s3Download(file:'.', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/jenkins-QA-SSICC-21.zip', force:true)
-            s3Download(file:'.', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/jenkins-QA-SSICC-22.zip', force:true)
+            s3Download(file:'.', bucket:'belcorp-codedeploy', path:'Encore/PRD-EncoreUSA/jenkins-PRD-EncoreUSA-8.zip', force:true)
         }
       }        
     }
