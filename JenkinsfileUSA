@@ -15,6 +15,7 @@ pipeline {
           ls
         '''    
       }
+      }
       stage('Package EncoreBRA') {
       steps {        
         powershell '''             
