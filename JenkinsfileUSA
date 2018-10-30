@@ -21,8 +21,8 @@ pipeline {
     }
     stage('Package ArtifactBRA') {
       steps {        
-        bat '''
-         cd %workspace%
+        powershell '''
+         ls .
         '''   
       }
     }
