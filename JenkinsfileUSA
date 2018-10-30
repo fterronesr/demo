@@ -13,6 +13,9 @@ pipeline {
         bat '''
           dir
         '''  
+        withAWS(credentials:'devops-s3',region:'us-east-1') {
+            s3Download(file:'peru/', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/peru.txt', force:true)
+        }
       }        
     }
     stage('Package ArtifactBRA') {
