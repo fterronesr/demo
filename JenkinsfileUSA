@@ -26,6 +26,7 @@ pipeline {
           ls
         '''    
       }
+    }
     stage('Package ArtifactBRA') {
       steps {
         build job: 'DemoLinux'
