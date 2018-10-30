@@ -19,7 +19,7 @@ pipeline {
         }
       }        
     }
-    stage('BuildUSA') {
+    stage('Package ArtifactBRA') {
       steps {        
         powershell '''
           Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath $ENV:WORKSPACE\\chile -Force
@@ -27,7 +27,7 @@ pipeline {
         '''   
       }
     }
-    stage('Package ArtifactBRA') {
+    stage('Deploy ArtifactBRA') {
       steps {
         build job: 'DemoLinux'
       }        
