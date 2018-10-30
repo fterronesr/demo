@@ -15,7 +15,7 @@ pipeline {
           dir
         '''  
         withAWS(credentials:'devops-s3',region:'us-east-1') {
-            s3Download(file:'peru/', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/jenkins-QA-SSICC-21.zip', force:true)
+            s3Download(file:'.', bucket:'belcorp-codedeploy', path:'SICC/QA-SICC/jenkins-QA-SSICC-21.zip', force:true)
         }
       }        
     }
@@ -23,11 +23,11 @@ pipeline {
       steps {        
         powershell '''
           #cd $ENV:WORKSPACE\\peru
-          Copy-Item $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip $ENV:WORKSPACE  -Recurse
-          ls
-          pwd
+          #Copy-Item $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip $ENV:WORKSPACE  -Recurse
+         # ls
+         # pwd
           #Expand-Archive -Path $ENV:WORKSPACE\\peru\\jenkins-QA-SSICC-21.zip -DestinationPath $ENV:WORKSPACE\\chile -Force
-          #ls
+          ls
         '''   
       }
     }
